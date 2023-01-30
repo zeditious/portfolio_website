@@ -1,8 +1,35 @@
-import { Button } from "@mantine/core";
 import Typewriter from "typewriter-effect";
-import Script from "next/script";
+import { useForm, yupResolver } from "@mantine/form";
+import { Button, TextInput, Textarea } from "@mantine/core";
+import { showNotification } from "@mantine/notifications";
+import * as Yup from "yup";
+
+const schema = Yup.object().shape({
+  name: Yup.string().required(),
+  email: Yup.string().email().required(),
+  message: Yup.string().required(),
+});
 
 export default function Home() {
+  const form = useForm({
+    validate: yupResolver(schema),
+    initialValues: {
+      name: "",
+      email: "",
+      message: "",
+    },
+  });
+
+  const submit = (values) => {
+    console.log(values);
+    form.reset();
+    showNotification({
+      title: "Message Sent",
+      message: "Successfully sent message to Trevan Seay!",
+      color: "green",
+    });
+  };
+
   return (
     <div>
       <div
@@ -38,44 +65,6 @@ export default function Home() {
             <path d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
           </svg>
         </div>
-      </div>
-
-      <div
-        id="/"
-        className="flex flex-col h-screen text-white items-center justify-center"
-      >
-        <h2 className="text-4xl md:text-7xl">About Me:</h2>
-        <Script
-          src="https://platform.linkedin.com/badges/js/profile.js"
-          async
-          defer
-          type="text/javascript"
-        />
-        <div
-          className="badge-base LI-profile-badge"
-          data-locale="en_US"
-          data-size="medium"
-          data-theme="light"
-          data-type="HORIZONTAL"
-          data-vanity="ian-allish"
-          data-version="v1"
-        >
-          <a
-            className="badge-base__link LI-simple-link"
-            href="https://www.linkedin.com/in/ian-allish?trk=profile-badge"
-          >
-            Ian Allish
-          </a>
-        </div>
-
-        <p className="text-xl px-6 md:w-1/2 pt-4 text-justify">
-          My name is Ian Allish. I am a recent aerospace engineering graduate
-          with a passion for programming. I have experience designing and
-          analyzing aerospace systems, as well as programming in languages such
-          as Python and MATLAB. I am excited to apply my technical skills to
-          solve complex problems and develop innovative solutions in the
-          aerospace industry.
-        </p>
       </div>
     </div>
   );
