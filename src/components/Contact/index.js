@@ -48,7 +48,7 @@ export default function Contact() {
               variant="filled"
               size="md"
               required
-              className="text-white w-full"
+              className="w-full"
               placeholder="Enter your name..."
               {...form.getInputProps("name")}
             />

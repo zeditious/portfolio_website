@@ -1,3 +1,5 @@
+import ScrollIndicator from "../PageStyle/scrollIndicator";
+
 export default function About() {
   return (
     <div>
@@ -15,6 +17,7 @@ export default function About() {
           solve complex problems and develop innovative solutions in the
           aerospace industry.
         </p>
+        <ScrollIndicator />
       </div>
     </div>
   );
