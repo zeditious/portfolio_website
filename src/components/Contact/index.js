@@ -17,17 +17,31 @@ export default function Contact() {
       name: "",
       email: "",
       message: "",
+      subject: "New Contact Email from ianallish.com",
     },
   });
 
-  const submit = (values) => {
-    console.log(values);
-    form.reset();
-    showNotification({
-      title: "Message Sent",
-      message: "Successfully sent message to Trevan Seay!",
-      color: "green",
+  const submit = async (values) => {
+    const response = await fetch("/api/sendgrid", {
+      method: "POST",
+      headers: { "content-type": "application/json" },
+      body: JSON.stringify(values),
     });
+
+    if (response.status === 200) {
+      form.reset();
+      showNotification({
+        title: "Message Sent",
+        message: "Successfully sent message to Ian Allish!",
+        color: "green",
+      });
+    } else {
+      showNotification({
+        title: "ERROR",
+        message: "Could not send email. Please try again later.",
+        color: "red",
+      });
+    }
   };
 
   return (
