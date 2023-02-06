@@ -7,7 +7,7 @@ const greetings = [
   "Bonjour,",
   "Guten tag,",
   "Salve,",
-  "Nǐn hǎo,",
+  "Nǐ hǎo,",
   "Olá,",
   "Asalaam alaikum,",
   "Konnichiwa,",
