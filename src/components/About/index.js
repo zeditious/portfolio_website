@@ -1,10 +1,11 @@
 import ScrollIndicator from "../PageStyle/scrollIndicator";
+import Link from "next/link";
 
 export default function About() {
   return (
     <div>
       <div
-        id="/"
+        id="about"
         className="flex flex-col h-screen text-white items-center justify-center"
       >
         <h2 className="text-4xl md:text-7xl">About Me:</h2>
@@ -17,7 +18,9 @@ export default function About() {
           solve complex problems and develop innovative solutions in the
           aerospace industry.
         </p>
-        <ScrollIndicator />
+        <Link href="#projects">
+          <ScrollIndicator />
+        </Link>
       </div>
     </div>
   );

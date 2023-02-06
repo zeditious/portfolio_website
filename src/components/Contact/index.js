@@ -47,7 +47,7 @@ export default function Contact() {
   return (
     <div>
       <div
-        id="/"
+        id="contact"
         className="flex flex-col h-screen text-white items-center justify-center"
       >
         <h2 className="text-4xl md:text-7xl">Contact Me:</h2>
