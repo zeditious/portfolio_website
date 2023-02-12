@@ -1,5 +1,6 @@
 import ScrollIndicator from "../PageStyle/scrollIndicator";
 import Link from "next/link";
+import { BrandLinkedin, BrandGithub, Mail } from "tabler-icons-react";
 
 export default function About() {
   return (
@@ -18,6 +19,19 @@ export default function About() {
           solve complex problems and develop innovative solutions in the
           aerospace industry.
         </p>
+        <a className="text-xl md:text-4xl py-4">Find me at:</a>
+        <div className="flex gap-8 justify-between">
+          <Link href="https://www.linkedin.com/in/ian-allish/">
+            <BrandLinkedin size={40} />
+          </Link>
+          <Link href="https://github.com/zeditious">
+            <BrandGithub size={40} />
+          </Link>
+          <Link href="mailto:ian@ianallish.com">
+            <Mail size={40} />
+          </Link>
+        </div>
+
         <Link href="#projects">
           <ScrollIndicator />
         </Link>

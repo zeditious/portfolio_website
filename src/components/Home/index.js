@@ -33,7 +33,13 @@ export default function Home() {
               deleteChars: "0",
             }}
           />
-          My name is Ian
+          My name is{" "}
+          <Link
+            href="https://www.linkedin.com/in/ian-allish/"
+            className="font-bold hover:underline underline-offset-4"
+          >
+            Ian
+          </Link>
         </h1>
         <a className="text-xl">Pleased to meet you.</a>
         <Link href="#about">
