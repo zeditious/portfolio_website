@@ -1,6 +1,7 @@
 import Typewriter from "typewriter-effect";
 import ScrollIndicator from "../PageStyle/scrollIndicator";
 import Link from "next/link";
+import { Square } from "tabler-icons-react";
 const greetings = [
   "Hello,",
   "Hola,",
@@ -20,7 +21,7 @@ export default function Home() {
     <div>
       <div
         id="/"
-        className="flex flex-col h-screen text-white items-center justify-center"
+        className="flex flex-1 flex-col h-screen md:max-h-[90vh] text-white items-center justify-center"
       >
         <h1 className="text-5xl md:text-8xl">
           <Typewriter
@@ -42,9 +43,18 @@ export default function Home() {
           </Link>
         </h1>
         <a className="text-xl">Pleased to meet you.</a>
-        <Link href="#about">
-          <ScrollIndicator />
-        </Link>
+        <div className="md:hidden">
+          <Link href="#about">
+            <ScrollIndicator />
+          </Link>
+        </div>
+      </div>
+      <div className="flex md:h-screen md:max-h-[10vh] items-end justify-center">
+        <div className="hidden md:block">
+          <Link href="#about">
+            <ScrollIndicator />
+          </Link>
+        </div>
       </div>
     </div>
   );

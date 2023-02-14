@@ -7,7 +7,7 @@ export default function About() {
     <div>
       <div
         id="about"
-        className="flex flex-col h-screen text-white items-center justify-center"
+        className="flex flex-col h-screen md:max-h-[90vh] text-white items-center justify-center"
       >
         <h2 className="text-4xl md:text-7xl">About Me:</h2>
 
@@ -31,10 +31,18 @@ export default function About() {
             <Mail size={40} />
           </Link>
         </div>
-
-        <Link href="#projects">
-          <ScrollIndicator />
-        </Link>
+        <div className="md:hidden">
+          <Link href="#projects">
+            <ScrollIndicator />
+          </Link>
+        </div>
+      </div>
+      <div className="flex h-screen max-h-[10vh] items-end justify-center">
+        <div className="hidden md:block">
+          <Link href="#projects">
+            <ScrollIndicator />
+          </Link>
+        </div>
       </div>
     </div>
   );
