@@ -11,6 +11,8 @@ export default function About() {
       >
         <h2 className="text-4xl md:text-7xl">About Me:</h2>
 
+        <img className="py-8 max-h-96 w-auto" src="/aboutme.jpg" />
+
         <p className="text-xl px-6 md:w-1/2 pt-4 text-justify">
           My name is Ian Allish. I am a recent aerospace engineering graduate
           with a passion for programming. I have experience designing and
